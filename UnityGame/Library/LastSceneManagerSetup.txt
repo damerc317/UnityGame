@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Destroyed_city_FREE/Scenes/destroyed_city.unity
+- path: Assets/Fresh.unity
   isLoaded: 1
   isActive: 1
