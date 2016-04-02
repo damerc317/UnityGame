@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/TurretTestSceneandSuch/TurretTest.unity
+- path: Assets/Fresh.unity
   isLoaded: 1
   isActive: 1
