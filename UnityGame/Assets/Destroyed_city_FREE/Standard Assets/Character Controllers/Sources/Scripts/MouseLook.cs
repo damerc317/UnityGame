@@ -9,7 +9,7 @@ using System.Collections;
 /// - Add the MouseLook script to the capsule.
 ///   -> Set the mouse look to use LookX. (You want to only turn character but not tilt it)
 /// - Add FPSInputController script to the capsule
-///   -> A CharacterMotor and a CharacterController component will be automatically added.
+///   -> A CharacterMotor and a CharacterInput component will be automatically added.
 
 /// - Create a camera. Make the camera a child of the capsule. Reset it's transform.
 /// - Add a MouseLook script to the camera.
