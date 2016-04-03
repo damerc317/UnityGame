@@ -7,7 +7,7 @@ public class objectPool : MonoBehaviour
 
     // Variables
     public static objectPool current;
-    public GameObject pooledObject;
+    public List<GameObject> pooledObjects;
     public int pooledAmnt = 20;
     public bool willGrow = true;
     public int numPools;
@@ -34,13 +34,15 @@ public class objectPool : MonoBehaviour
         numPools = (int)POOL.NumberOfPools;
         Pools = new List<List<GameObject>>();
 
+        // loops through pool types
         for (int j = 0; j < numPools; j++)
         {
             objs = new List<GameObject>();
 
+            // creates a number of objects in each pool type
             for (int i = 0; i < pooledAmnt; i++)
             {
-                GameObject obj = (GameObject)Instantiate(pooledObject);
+                GameObject obj = Instantiate(pooledObjects[j]);
                 obj.SetActive(false);
                 objs.Add(obj);
             }
@@ -55,6 +57,7 @@ public class objectPool : MonoBehaviour
         return Pools[i];
     }
 
+    // gets a single pool from the list of pools and searches it
     public GameObject getPooledObject(int poolIndex)
     {
         List<GameObject> objs = getPooledList(poolIndex);
@@ -69,7 +72,7 @@ public class objectPool : MonoBehaviour
 
         if (willGrow)
         {
-            GameObject newObj = Instantiate(pooledObject);
+            GameObject newObj = Instantiate(pooledObjects[poolIndex]);
             objs.Add(newObj);
             return newObj;
         }
