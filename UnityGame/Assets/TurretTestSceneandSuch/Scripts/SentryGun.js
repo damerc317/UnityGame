@@ -17,7 +17,7 @@ function Update () {
 	
 	var targetPoint = target.position;
 	var targetRotation = Quaternion.LookRotation (targetPoint - transform.position, Vector3.up);
-	transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 2.0);
+	transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 25.0);
 
 	// If we are almost rotated towards target - fire one clip of ammo
 	var forward = transform.TransformDirection(Vector3.forward);
