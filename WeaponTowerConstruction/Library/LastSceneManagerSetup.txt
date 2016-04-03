@@ -1,4 +1,0 @@
-sceneSetups:
-- path: C:/Users/David/Downloads/SimpleBloodSplatterSystem/Assets/SimpleBloodSplatterSystem/DemoScene.unity
-  isLoaded: 1
-  isActive: 1
