@@ -15,9 +15,8 @@ public class objectPool : MonoBehaviour
     // insert more pool types for added functionality
     public enum POOL
     {
-        Bullets,
         Zombies,
-        NumberOfPools = 2
+        NumberOfPools = 1
     }
 
     List<GameObject> objs;
@@ -58,9 +57,9 @@ public class objectPool : MonoBehaviour
     }
 
     // gets a single pool from the list of pools and searches it
-    public GameObject getPooledObject(int poolIndex)
+    public GameObject getPooledObject(POOL poolIndex)
     {
-        List<GameObject> objs = getPooledList(poolIndex);
+        List<GameObject> objs = getPooledList((int)poolIndex);
 
         for (int i = 0; i < objs.Count; i++)
         {
@@ -72,7 +71,7 @@ public class objectPool : MonoBehaviour
 
         if (willGrow)
         {
-            GameObject newObj = Instantiate(pooledObjects[poolIndex]);
+            GameObject newObj = Instantiate(pooledObjects[(int)poolIndex]);
             objs.Add(newObj);
             return newObj;
         }

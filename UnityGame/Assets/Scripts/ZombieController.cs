@@ -16,9 +16,14 @@ namespace L4ZR.Characters.ThirdPerson
             // get the components on the object we need ( should not be null due to require component so no need to check )
             agent = GetComponentInChildren<NavMeshAgent>();
             character = GetComponent<CharacterController>();
-
+            target = GameObject.FindWithTag("Player").transform;
             agent.updateRotation = false;
             agent.updatePosition = true;
+        }
+
+        private void Awake()
+        {
+            
         }
 
 
@@ -26,6 +31,8 @@ namespace L4ZR.Characters.ThirdPerson
         {
             if (target != null)
                 agent.SetDestination(target.position);
+            else
+                target = GameObject.FindWithTag("Player").transform;
 
             if (agent.remainingDistance > agent.stoppingDistance)
                 character.Move(agent.desiredVelocity, false, false);
